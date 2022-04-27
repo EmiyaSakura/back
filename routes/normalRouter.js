@@ -5,10 +5,11 @@ const service = require('../services/normalService');
 
 router.get('/getUser', service.getUser);
 router.post('/findUser', service.findUser);
+router.post('/updateAvatar', service.updateAvatar);
 router.post('/updateNickName', service.updateNickName);
 router.post('/updateEmail', service.updateEmail);
 router.post('/updatePassword', service.updatePassword);
-// router.post('/getQiniuToken', service.getQiniuToken);
+router.post('/getQiniuToken', service.getQiniuToken);
 router.get('/getVideo', service.getVideo);
 router.post('/reserveVideo', service.reserveVideo);
 router.post('/remindVideo', service.remindVideo);

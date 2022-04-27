@@ -38,7 +38,7 @@ module.exports = {
                 password: md5(count),
                 nick_name: name,
                 email: email,
-                avatar: 'http://sakura.i8329.cn/%E8%8D%A7.webp',
+                avatar: 'http://sakura.i8329.cn/no-avatar.jpg',
                 role: role,
             }
             await UserModel.insertUser(user)

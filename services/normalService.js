@@ -58,6 +58,20 @@ module.exports = {
             code: CODE_SUCCESS, message: '', info: user
         })
     },
+    // 修改头像
+    async updateAvatar(req, resp) {
+        let {account} = decode(req);
+        let {avatar} = req.body;
+
+        let user = {
+            avatar: 'http://sakura.i8329.cn/' + avatar
+        }
+        await UserModel.updateUser([user, account])
+
+        return resp.json({
+            code: CODE_SUCCESS, message: '', info: null
+        });
+    },
     // 修改昵称
     async updateNickName(req, resp) {
         let {account} = decode(req);
@@ -72,6 +86,7 @@ module.exports = {
             code: CODE_SUCCESS, message: '', info: null
         });
     },
+    // 修改邮箱
     async updateEmail(req, resp) {
         let result = {code: CODE_ERROR, message: '数据不合法', info: null}
         let {account} = decode(req);
@@ -90,6 +105,7 @@ module.exports = {
         }
         return resp.json(result)
     },
+    // 修改密码
     async updatePassword(req, resp) {
         let result = {code: CODE_ERROR, message: '数据不合法', info: null}
         let {account} = decode(req);
@@ -113,12 +129,14 @@ module.exports = {
         }
         return resp.json(result)
     },
-    // getQiniuToken(req, resp) {
-    //     let {key} = req.body;
-    //     return resp.json({
-    //         code: CODE_SUCCESS, message: '', info: qiniuToken.uploadToken(key)
-    //     });
-    // },
+    // 获取七牛云token
+    getQiniuToken(req, resp) {
+        let {key} = req.body;
+        console.log(key)
+        return resp.json({
+            code: CODE_SUCCESS, message: '', info: qiniuToken.uploadToken(key)
+        });
+    },
     // 获取直播信息集合
     async getVideo(req, resp) {
         let {account} = decode(req);
@@ -250,9 +268,9 @@ module.exports = {
     // 新增咨询记录
     async insertChat(req, resp) {
         let {account} = decode(req);
-        let {to_chat, type, info} = req.body
+        let {to_chat, type, content} = req.body
         let chat = {
-            from_chat: account, to_chat, type, info
+            from_chat: account, to_chat, type, content
         }
         await ChatModel.insertChat(chat)
         return resp.json({code: CODE_SUCCESS, message: '', info: null});

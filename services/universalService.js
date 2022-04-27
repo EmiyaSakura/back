@@ -49,7 +49,7 @@ module.exports = {
                     password: md5(password),
                     nick_name: '用户' + count,
                     email: email,
-                    avatar: 'http://sakura.i8329.cn/%E8%8D%A7.webp',
+                    avatar: 'http://sakura.i8329.cn/no-avatar.jpg',
                     role: 'normal',
                 }
 
