@@ -1,0 +1,36 @@
+{
+  "name": "express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "serve": "nodemon app.js"
+  },
+  "dependencies": {
+    "boom": "^7.3.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "less-middleware": "~2.2.1",
+    "moment": "^2.29.1",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "pug": "2.0.0-beta11",
+    "qiniu": "^7.4.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "blueimp-md5": "^2.18.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express-jwt": "^6.1.0",
+    "express-validator": "^6.12.1",
+    "http-assert": "^1.5.0",
+    "js-base64": "^3.6.1",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12"
+  }
+}
